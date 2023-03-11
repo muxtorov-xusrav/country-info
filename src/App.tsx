@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import HeadText from './component/HeadText';
+import Input from './component/Input';
+import MyCard from './component/MyCard';
 
-function App() {
+const date = {
+  code: 'UZ',
+  name: 'Uzbekistan',
+  native: "O'zbekiston",
+  phone: '998',
+  capital: 'Tashkent',
+  currency: 'UZS',
+  languages: [
+    {
+      name: 'Uzbek',
+      native: 'Ўзбек',
+    },
+    {
+      name: 'Russian',
+      native: 'Русский',
+    },
+  ],
+  continent: {
+    name: 'Asia',
+  },
+  emoji: '🇺🇿',
+  states: [],
+};
+
+export default () => {
+  const [search, setSearch] = useState<string>('');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <HeadText text='Countries' type='h4' />
+      <Input />
+      <MyCard
+        code={date.code}
+        name={date.name}
+        native={date.native}
+        phone={date.phone}
+        capital={date.capital}
+        currency={date.currency}
+        languages={date.languages}
+        continent={date.continent}
+        emoji={date.emoji}
+        states={date.states}
+      />
     </div>
   );
-}
-
-export default App;
+};
