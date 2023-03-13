@@ -1,5 +1,4 @@
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import CustomCard from '../../utils/interfaces/CustomCard';
 import { Box } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -9,7 +8,7 @@ import { Flag } from '../../utils/Flags/flags';
 
 export default (props: CustomCard) => {
   return (
-    <Card sx={{ width: '25%', border: '3px solid black', borderRadius: 5 }}>
+    <Card sx={{ border: '3px solid black', borderRadius: 5 }}>
       <Box sx={{ padding: '16px' }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Box sx={{ display: 'flex' }}>

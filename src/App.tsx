@@ -3,6 +3,7 @@ import './App.css';
 import HeadText from './component/HeadText';
 import Input from './component/Input';
 import MyCard from './component/MyCard';
+import { Box, Grid } from '@mui/material';
 
 const date = {
   code: 'UZ',
@@ -34,18 +35,24 @@ export default () => {
     <div className='container'>
       <HeadText text='Countries' type='h4' />
       <Input />
-      <MyCard
-        code={date.code}
-        name={date.name}
-        native={date.native}
-        phone={date.phone}
-        capital={date.capital}
-        currency={date.currency}
-        languages={date.languages}
-        continent={date.continent}
-        emoji={date.emoji}
-        states={date.states}
-      />
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={6} md={4} lg={3}>
+            <MyCard
+              code={date.code}
+              name={date.name}
+              native={date.native}
+              phone={date.phone}
+              capital={date.capital}
+              currency={date.currency}
+              languages={date.languages}
+              continent={date.continent}
+              emoji={date.emoji}
+              states={date.states}
+            />
+          </Grid>
+        </Grid>
+      </Box>
     </div>
   );
 };
