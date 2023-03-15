@@ -22,7 +22,7 @@ export default (props: CustomCard) => {
               />
             </Box>
             <Box>
-              <span style={{ display: 'block', fontSize: 26 }}>
+              <span style={{ display: 'block', fontSize: 18 }}>
                 {props?.name}
               </span>
               <span>{props?.capital}</span>
